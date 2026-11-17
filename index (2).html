@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Preencha sua aplicação para o grupo E.V.G.R.N.">
+  <title>QUALIFICAÇÃO E.V.G.R.N.</title>
+  <style>
+:root {
+  color-scheme: light;
+  --page: #f2f8ef;
+  --header: #dcebdc;
+  --border: #b9cbbc;
+  --field: #fcfffb;
+  --text: #17241b;
+  --muted: #45594a;
+  --accent: #356342;
+  --cta: #111;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 78px;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font: 400 16px/1.55 "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--header);
+  border-bottom: 1px solid #cbdccd;
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  min-height: 57px;
+  width: min(948px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.brand {
+  color: var(--text);
+  font-size: 19px;
+  font-weight: 720;
+  letter-spacing: -0.035em;
+  text-decoration: none;
+}
+
+.page {
+  width: min(618px, calc(100% - 48px));
+  margin-inline: auto;
+  padding-block: 54px 96px;
+}
+
+.intro {
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--muted);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.30em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 22px 0 24px;
+  font-size: clamp(27px, 5.8vw, 40px);
+  font-weight: 760;
+  line-height: 1.16;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+
+.description {
+  width: min(100%, 532px);
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 1.64;
+  text-align: justify;
+}
+
+.qualification-form,
+.confirmation {
+  margin-top: 47px;
+}
+
+fieldset {
+  min-width: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.contact-fields {
+  display: grid;
+  gap: 12px;
+}
+
+.contact-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.contact-label {
+  display: block;
+  margin: 0 0 7px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.phone-field {
+  padding-top: 3px;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background-color: var(--field);
+  color: var(--text);
+  padding: 14px 16px;
+  font: inherit;
+  scroll-margin-block: 72px 32px;
+}
+
+input {
+  min-height: 54px;
+}
+
+textarea {
+  min-height: 112px;
+  height: 112px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+textarea::placeholder {
+  font-size: 14px;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+  outline: 2px solid #a3c4a9;
+  outline-offset: 1px;
+}
+
+.questions {
+  display: grid;
+  gap: 22px;
+  margin-top: 22px;
+}
+
+.question-label {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 520;
+  line-height: 1.5;
+}
+
+.question-number {
+  flex: none;
+  font-weight: 660;
+}
+
+.cta {
+  display: block;
+  width: 100%;
+  min-height: 58px;
+  margin-top: 21px;
+  padding: 15px 20px;
+  border: 1px solid var(--cta);
+  border-radius: 14px;
+  background: var(--cta);
+  color: #fff;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 680;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cta:hover:not(:disabled) {
+  background: #272727;
+}
+
+.cta:disabled {
+  opacity: 0.62;
+  cursor: wait;
+}
+
+.form-error {
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  border: 1px solid #dfbcad;
+  border-radius: 10px;
+  background: #fff5ef;
+  color: #7d2e22;
+  font-size: 15px;
+}
+
+.confirmation {
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--field);
+  text-align: center;
+}
+
+.confirmation h2 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+}
+
+.confirmation p {
+  margin: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 560px) {
+  .page,
+  .topbar-inner {
+    width: calc(100% - 36px);
+  }
+
+  .page {
+    padding-block: 38px 58px;
+  }
+
+  h1 {
+    margin-block: 16px 18px;
+  }
+
+  .description {
+    text-align: left;
+  }
+
+  .qualification-form,
+  .confirmation {
+    margin-top: 30px;
+  }
+
+  .contact-pair {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.form-note {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#inicio">E.V.G.R.N.</a>
+    </div>
+  </header>
+
+  <main class="page" id="inicio">
+    <section class="intro" aria-labelledby="titulo">
+      <p class="eyebrow">Acesso ao grupo de entrada</p>
+      <h1 id="titulo">QUALIFICAÇÃO E.V.G.R.N.</h1>
+      <p class="description">
+        Preencha todas as perguntas para concluir o processo qualificatório.
+        Leva menos de 3 minutos. Finalizando você será redirecionado(a) para
+        um grupo exclusivo e gratuito (Por enquanto) onde você irá ver tudo
+        que vai receber e aprender sobre o mercado de Direct Response e Marketing.
+      </p>
+    </section>
+
+    <form id="application" class="qualification-form" method="post" aria-describedby="form-note">
+      <fieldset id="application-fields" disabled>
+        <legend class="sr-only">Aplicação para o E.V.G.R.N.</legend>
+        <div class="contact-fields">
+          <div>
+            <p class="contact-label">Seu nome e @ do Instagram</p>
+            <div class="contact-pair">
+              <div>
+                <label class="sr-only" for="name">Seu nome</label>
+                <input id="name" name="name" autocomplete="name" placeholder="Seu nome" required maxlength="120">
+              </div>
+              <div>
+                <label class="sr-only" for="instagram">Seu Instagram (@)</label>
+                <input id="instagram" name="instagram" autocapitalize="none" spellcheck="false" placeholder="Seu Instagram (@)" required maxlength="100">
+              </div>
+            </div>
+          </div>
+          <div>
+            <label class="sr-only" for="email">Seu melhor e-mail</label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="Seu melhor e-mail" required maxlength="254">
+          </div>
+          <div class="phone-field">
+            <label class="contact-label" for="phone">Telefone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="WhatsApp com DDD" required maxlength="32">
+          </div>
+        </div>
+
+        <div class="questions">
+          <div class="question">
+            <label for="experience" class="question-label">
+              <span class="question-number" aria-hidden="true">1</span>
+              <span>Você entende de copy, criativo, vendas e marketing? Se não, seja honesto e diga o que já tentou e aprendeu.</span>
+            </label>
+            <textarea id="experience" name="experience" rows="4" maxlength="2400" required></textarea>
+          </div>
+          <div class="question">
+            <label for="income" class="question-label">
+              <span class="question-number" aria-hidden="true">2</span>
+              <span>Se trabalha com marketing, qual representa melhor sua renda mensal hoje? 3k, 5k, 10k, 15k, +30k?</span>
+            </label>
+            <textarea id="income" name="income" rows="4" maxlength="300" placeholder="Se ainda não trabalha com marketing, diga isso aqui." required></textarea>
+          </div>
+          <div class="question">
+            <label for="progress" class="question-label">
+              <span class="question-number" aria-hidden="true">3</span>
+              <span>Mesmo sabendo sobre copy, vendas, marketing, porque ainda não chegou no lugar que gostaria? Se não domina nada, me diga o que te faz pensar que agora é o momento!</span>
+            </label>
+            <textarea id="progress" name="progress" rows="4" maxlength="2400" required></textarea>
+          </div>
+          <div class="question">
+            <label for="obstacles" class="question-label">
+              <span class="question-number" aria-hidden="true">4</span>
+              <span>O que te faz travar hoje e por quanto tempo você está assim?</span>
+            </label>
+            <textarea id="obstacles" name="obstacles" rows="4" maxlength="2400" required></textarea>
+          </div>
+          <div class="question">
+            <label for="outlook" class="question-label">
+              <span class="question-number" aria-hidden="true">5</span>
+              <span>Se daqui a 6 meses tudo der certo, como vai estar a sua vida?</span>
+            </label>
+            <textarea id="outlook" name="outlook" rows="4" maxlength="2400" required></textarea>
+          </div>
+          <div class="question">
+            <label for="consultation" class="question-label">
+              <span class="question-number" aria-hidden="true">6</span>
+              <span>Se estivesse em uma consultoria individual comigo, o que gostaria de saber, e por que você acredita que devo aceitar você no E.V.G.R.N?</span>
+            </label>
+            <textarea id="consultation" name="consultation" rows="4" maxlength="2400" required></textarea>
+          </div>
+        </div>
+        <p id="form-note" class="form-note">Suas respostas ficam nesta página. Ao concluir, você seguirá para o grupo no WhatsApp.</p>
+        <button class="cta" type="submit">Concluir e abrir o grupo</button>
+      </fieldset>
+      <noscript><p class="form-error">Ative o JavaScript para preencher o formulário e abrir o grupo.</p></noscript>
+    </form>
+
+    <section id="confirmation" class="confirmation" aria-labelledby="confirmation-heading" hidden>
+      <h2 id="confirmation-heading" tabindex="-1">Preenchimento concluído!</h2>
+      <p>Use o botão abaixo se o WhatsApp não abrir automaticamente.</p>
+      <a id="group-link" class="cta" rel="noreferrer">Abrir o grupo</a>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      "use strict";
+
+      // Modo simulado. As respostas são validadas e descartadas no navegador.
+      const groupUrl = "https://chat.whatsapp.com/HGhEAgVUuEL0TSRGZhtGxS";
+      const form = document.getElementById("application");
+      const fields = document.getElementById("application-fields");
+      const phone = document.getElementById("phone");
+      const requiredFields = Array.from(form.querySelectorAll("input[required], textarea[required]"));
+      const confirmation = document.getElementById("confirmation");
+      const groupLink = document.getElementById("group-link");
+
+      requiredFields.forEach((field) => {
+        field.addEventListener("input", () => field.setCustomValidity(""));
+      });
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (form.hidden) return;
+
+        for (const field of requiredFields) {
+          field.setCustomValidity(field.value.trim() ? "" : "Preencha este campo.");
+        }
+
+        const number = phone.value.trim();
+        const digits = number.replace(/\D/g, "");
+        if (!/^\+?[\d\s().-]+$/.test(number) || digits.length < 10 || digits.length > 15) {
+          phone.setCustomValidity("Informe um número de WhatsApp com DDD.");
+        }
+
+        if (!form.reportValidity()) return;
+
+        groupLink.href = groupUrl;
+        form.reset();
+        form.hidden = true;
+        confirmation.hidden = false;
+        document.getElementById("confirmation-heading").focus();
+        window.location.assign(groupUrl);
+      });
+
+      fields.disabled = false;
+    })();
+  </script>
+</body>
+</html>
